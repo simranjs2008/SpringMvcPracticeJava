@@ -15,12 +15,12 @@
 
 		<form:form action="processForm" modelAttribute="user" method="post">
 
-            Email:
+            User Name:
             <form:input path="name" />
             <form:errors path="name" cssClass="error" />
 
 			<br>
-			<br> user name:
+			<br> Email:
             <form:input path="email" />
 			<form:errors path="email" cssClass="error" />
 

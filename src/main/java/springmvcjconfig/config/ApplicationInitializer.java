@@ -7,12 +7,12 @@ public class ApplicationInitializer extends AbstractAnnotationConfigDispatcherSe
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
 		// TODO Auto-generated method stub
-		return new Class[] {MvcConfig.class};
+		return new Class[] {AppContext.class};
 	}
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		return null;
+		return new Class[] {MvcConfig.class};
 	}
 
 	@Override

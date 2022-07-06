@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "user")
@@ -13,8 +15,14 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+	
+	@NotBlank(message="name cannot be null")
 	private String name;
+	
+	@Email(message="email is invalid")
+	@NotBlank(message="email cannot be null")
 	private String email;
+	
 	public int getId() {
 		return id;
 	}

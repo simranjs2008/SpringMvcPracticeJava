@@ -32,6 +32,10 @@ public class HomeController {
 	@RequestMapping("/processForm")
 	public String fillForm(@ModelAttribute("user") @Valid User user, BindingResult result) {
 		System.out.println(user);
+		if(result.hasErrors()) {
+			System.out.println("got error: " + result);
+			return "contact";
+		}
 		userService.createUser(user);
 		return "detailSuccess";
 	}
